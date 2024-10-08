@@ -1,0 +1,81 @@
+/* 디스플레이 방향 전환 설정 필요*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.slideArea {
+  position: relative;
+  max-width: 100vw;
+  width: 100vw;
+  height: 50vw;
+  overflow: hidden;
+}
+
+.slideTrack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+  flex-direction: column;
+}
+
+.slideTrack img {
+  width: 100%;
+  flex: 0 0 auto;
+  height: 100%;
+  border-radius: 20px;
+  border: none;
+  object-fit: cover;
+}
+
+button {
+  position: absolute;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #daa520;
+  border-radius: 15px;
+  border: none;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.slideArea:hover button {
+  opacity: 1;
+}
+
+#prevBtn {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1%;
+}
+
+#nextBtn {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1%;
+}
+
+#topBtn {
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#bottomBtn {
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button:hover {
+  transform: translateY(-20px);
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
